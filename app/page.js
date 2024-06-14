@@ -1,95 +1,30 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+﻿import React from 'react';
+import Grid from '@mui/material/Grid';
+import BasicCard from '../components/common/card';
+import List from "../components/common/list"
 
-export default function Home() {
+const Page = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <>
+    <Grid container spacing={2} justifyContent="center">
+      <Grid item xs={12} sm={8} md={6} lg={3}>
+        <BasicCard head={"Total Deals"} count={100} btnTxt={"view deals"} lottie={"https://lottie.host/embed/5fa7e277-eb9c-4f2a-bdd6-3a4d8ec203d7/TlovlXbFVq.json"}/>
+      </Grid>
+      <Grid item xs={12} sm={8} md={6} lg={3}>
+        <BasicCard head={"Total Leads"} count={200} btnTxt={"view leads"} lottie={"https://lottie.host/embed/b2761b98-3e0b-49f0-a983-ef1203c7707b/66eFGa6Q0J.json"} />
+      </Grid>
+      <Grid item xs={12} sm={8} md={6} lg={3}>
+        <BasicCard head={"Total People"} count={300} btnTxt={"view people"} lottie={"https://lottie.host/embed/33ce8be8-7a46-4e5a-86eb-c321b2260be7/QoAxJ1Tpcy.json"} />
+      </Grid>
+      <Grid item xs={12} sm={8} md={6} lg={3}>
+        <BasicCard head={"Total Organization"} count={400} btnTxt={"view organizations"} lottie={"https://lottie.host/embed/ca533667-544d-4825-ba84-cac98cd8064e/b09CAuirYH.json"}/>
+      </Grid>
+    </Grid>
+    <br />
+    <h2 style={{margin:"0px 20px"}}>People List</h2>
+    <List />
+    </>
   );
 }
+
+export default Page;

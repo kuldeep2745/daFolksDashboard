@@ -28,7 +28,7 @@ export default function EditTopicForm({ id, name, contact, amount, type }) {
       }
 
       router.refresh();
-      router.push("/");
+      router.push("/deals");
     } catch (error) {
       console.log(error);
     }

@@ -1,16 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Button from '@mui/material/Button';
 
-export default function AddTopic() {
+export default function AddTopic(props) {
   const [name, setName] = useState("");
   const [contact, setContact] = useState();
   const [amount, setAmount] = useState();
-  const [type, setType] = useState("");
+  const [type, setType] = useState("deal");
 
   const router = useRouter();
+
+  useEffect(() => {
+    setType(props?.apiType)
+  }, [])
+
+  console.log("type", type)
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +52,7 @@ export default function AddTopic() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <Button type="submit" className="button" >Add Deal</Button> {" "}
+      <Button type="submit" className="button" >Add {props?.apiType}</Button> {" "}
       <input
         onChange={(e) => setName(e.target.value)}
         value={name}
@@ -67,13 +74,6 @@ export default function AddTopic() {
         className="border border-slate-500 px-8 py-2"
         type="number"
         placeholder="Deal Amount"
-      />
-      <input
-        onChange={(e) => setType(e.target.value)}
-        value={type}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Deal Type"
       />
     </form>
   );

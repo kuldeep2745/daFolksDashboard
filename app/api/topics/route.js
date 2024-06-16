@@ -9,10 +9,22 @@ export async function POST(request) {
   return NextResponse.json({ message: "Deal Created" }, { status: 201 });
 }
 
-export async function GET() {
+export async function GET(req) {
   await connectMongoDB();
-  const topics = await Topic.find();
-  return NextResponse.json({ topics });
+
+  const url = new URL(req.url);
+  const type = url.searchParams.get('type');
+
+  if (!type) {
+    return NextResponse.json({ error: 'Type parameter is required' }, { status: 400 });
+  }
+
+  try {
+    const topics = await Topic.find({ type: type });
+    return NextResponse.json({ topics });
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to fetch topics' }, { status: 500 });
+  }
 }
 
 export async function DELETE(request) {

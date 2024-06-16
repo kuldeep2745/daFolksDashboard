@@ -86,7 +86,7 @@ export default function CustomizedTables(props) {
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Deal Name</StyledTableCell>
+              <StyledTableCell>{props?.apiType} Name</StyledTableCell>
               <StyledTableCell align="center">Contact</StyledTableCell>
               <StyledTableCell align="center">Amount</StyledTableCell>
               <StyledTableCell align="center">Actions</StyledTableCell>

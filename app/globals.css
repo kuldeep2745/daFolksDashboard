@@ -137,7 +137,7 @@ body {
 
 .button {
   padding: 15px 20px;
-  font-size: 16px;
+  font-size: 12px;
   background: transparent;
   border: none;
   position: relative;
@@ -230,3 +230,106 @@ body {
 
 
 
+
+
+.button99 {
+  background: none;
+  border: none;
+}
+
+.button99 .bloom-container99 {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  background: none;
+}
+
+.button99 .bloom-container99 .button-container-main99 {
+  width: 55px; /* Reduced to 50% */
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-right: 2.5px solid white; /* Reduced border */
+  border-left: 2.5px solid rgba(128, 128, 128, 0.147); /* Reduced border */
+  transform: rotate(-45deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.button99 .bloom-container99 .button-container-main99 .button-inner99 {
+  height: 30px; /* Reduced to 50% */
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.5) -5px 2.5px 5px 0px; /* Reduced shadow */
+  transition: all 0.5s ease-in-out;
+}
+
+.button99 .bloom-container99 .button-container-main99 .button-inner99 .front99 {
+  position: absolute;
+  inset: 2.5px; /* Reduced inset */
+  border-radius: 50%;
+  background: linear-gradient(60deg, rgb(0, 103, 140) 0%, rgb(58, 209, 233) 100%);
+  display: grid;
+  place-content: center;
+}
+
+.button99 .bloom-container99 .button-container-main99 .button-inner99 .front99 .svg99 {
+  fill: #ffffff;
+  opacity: 0.5;
+  width: 15px; /* Reduced to 50% */
+  aspect-ratio: 1;
+  transform: rotate(45deg);
+  transition: all 0.2s ease-in;
+}
+
+.button99 .bloom-container99 .button-container-main99 .button-glass99 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.888) 100%);
+  transform: translate(0%, -50%) rotate(0deg);
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in-out;
+}
+
+.button99 .bloom-container99 .bloom99 {
+  height: 0.5px; /* Reduced to 50% */
+  width: 0.5px; /* Reduced to 50% */
+  position: absolute;
+  background: white;
+}
+
+.button99 .bloom-container99 .bloom199 {
+  top: 5px; /* Reduced to 50% */
+  right: 10px; /* Reduced to 50% */
+  box-shadow: rgb(255, 255, 255) 0px 0px 5px 5px, rgb(255, 255, 255) 0px 0px 10px 10px; /* Reduced shadow */
+}
+
+.button99 .bloom-container99 .bloom299 {
+  bottom: 5px; /* Reduced to 50% */
+  left: 10px; /* Reduced to 50% */
+  box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 5px 5px, rgba(255, 255, 255, 0.5) 0px 0px 15px 10px; /* Reduced shadow */
+}
+
+.button99 .bloom-container99:hover {
+  transform: scale(1.1);
+}
+
+.button99 .bloom-container99:hover .button-container-main99 .button-glass99 {
+  transform: translate(0%, -40%);
+}
+
+.button99 .bloom-container99:hover .button-container-main99 .button-inner99 .front99 .svg99 {
+  opacity: 1;
+  filter: drop-shadow(0 0 5px white); /* Reduced shadow */
+}
+
+.button99 .bloom-container99:active {
+  transform: scale(0.7);
+}
+
+.button99 .bloom-container99:active .button-container-main99 .button-inner99 {
+  transform: scale(1.2);
+}

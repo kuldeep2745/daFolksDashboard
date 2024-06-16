@@ -6,7 +6,7 @@ import Deals from "../../components/dealsComponents/deals";
 const page = () => {
   return (
     <div>
-      <Deals apiType={"organization"} />
+      <Deals apiType={"organizations"} />
     </div>
   )
 }

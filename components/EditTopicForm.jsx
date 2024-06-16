@@ -20,7 +20,7 @@ export default function EditTopicForm({ id, name, contact, amount, type }) {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ newName, newContact, newAmount, newType}),
+        body: JSON.stringify({ newName, newContact, newAmount, newType }),
       });
 
       if (!res.ok) {

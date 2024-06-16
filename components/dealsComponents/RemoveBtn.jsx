@@ -2,8 +2,8 @@
 
 // import { HiOutlineTrash } from "react-icons/hi";
 import { useRouter } from "next/navigation";
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function RemoveBtn({ id }) {
   const router = useRouter();
@@ -22,8 +22,8 @@ export default function RemoveBtn({ id }) {
   };
 
   return (
-    <IconButton  onClick={removeTopic} aria-label="delete">
-    <DeleteIcon />
-  </IconButton>
+    <IconButton onClick={removeTopic} aria-label="delete">
+      <DeleteIcon />
+    </IconButton>
   );
 }

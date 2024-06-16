@@ -6,7 +6,7 @@ import CountUp from 'react-countup';
 const count = (props) => {
   return (
     <>
-<CountUp duration={4.75} className="counter-style" end={props?.Counter} />
+<CountUp duration={2} className="counter-style" end={props?.Counter} />
     </>
   )
 }

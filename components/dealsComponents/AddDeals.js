@@ -19,10 +19,10 @@ export default function AddTopic(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !contact || !amount || !type) {
-      alert("Name, Contact, and Amount are required.");
-      return;
-    }
+    // if (!name || !contact || !amount || !type) {
+    //   alert("Name, Contact, and Amount are required.");
+    //   return;
+    // }
 
     try {
       const res = await fetch("http://localhost:3000/api/topics", {

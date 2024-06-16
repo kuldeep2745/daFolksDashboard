@@ -82,7 +82,7 @@ export default function BasicCard(props) {
             />
           </Typography>
           <Link
-            href={props?.btnTxt}
+            href={props?.type}
             style={{ textDecoration: "none", color: "inherit" }}
           >
             <Button btn={props?.btnTxt} />

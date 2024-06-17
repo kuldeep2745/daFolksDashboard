@@ -50,9 +50,6 @@ export default function BasicModal() {
               <li>7</li>
             </ul>
           </div>
-          {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
         </Box>
       </Modal>
     </div>

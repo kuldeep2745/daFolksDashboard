@@ -36,7 +36,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
-    verticalAlign: "middle", // Align content vertically
+    verticalAlign: "middle",
   },
 }));
 
@@ -52,7 +52,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const HighlightedText = ({ text, highlight }) => {
   if (!highlight) return <span>{text}</span>;
 
-  const textString = String(text); // Convert text to string
+  const textString = String(text);
   const parts = textString.split(new RegExp(`(${highlight})`, "gi"));
 
   return (
@@ -83,7 +83,7 @@ export default function CustomizedTables(props) {
       setFilteredTopics(data.topics || []);
     }
     fetchTopics();
-  }, [typeFilter]); // Trigger fetchTopics when typeFilter changes
+  }, [typeFilter]);
 
   React.useEffect(() => {
     const filtered = topics.filter(

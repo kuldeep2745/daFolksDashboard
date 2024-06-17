@@ -1,6 +1,5 @@
 "use client";
 
-// import { HiOutlineTrash } from "react-icons/hi";
 import { useRouter } from "next/navigation";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";

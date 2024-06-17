@@ -17,7 +17,6 @@ import Button from "../../components/common/button";
 import AddDeals from "./AddDeals";
 import RemoveDeals from "./RemoveBtn";
 import Link from "next/link";
-// import EditDeals from "./EditDeals"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {

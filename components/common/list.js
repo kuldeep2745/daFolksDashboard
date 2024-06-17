@@ -15,8 +15,8 @@ export default function AlignItemsList() {
         width: "100%",
         maxWidth: 360,
         bgcolor: "background.paper",
-        maxHeight: 200, // Set a max height for the list
-        overflow: "auto", // Enable scrolling
+        maxHeight: 200,
+        overflow: "auto",
       }}
     >
       <ListItem className="list-style" alignItems="flex-start">
@@ -87,7 +87,6 @@ export default function AlignItemsList() {
           }
         />
       </ListItem>
-      {/* Add more ListItems here if needed */}
     </List>
   );
 }

@@ -11,10 +11,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import Stack from "@mui/material/Stack";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-// import Button from '@mui/material/Button';
 import Button from "../../components/common/button";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -41,18 +39,9 @@ function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
-// const rows = [
-//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//   createData('Eclair', 262, 16.0, 24, 6.0),
-//   createData('Cupcake', 305, 3.7, 67, 4.3),
-//   createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
-
 export default function CustomizedTables() {
   return (
     <div style={{ margin: "0px 20px" }}>
-      {/* <Button style={{backgroundColor:"grey"}} variant="contained">Add User</Button> */}
       <Button style={{ backgroundColor: "grey" }} btn={"Add User"} />
       <br />
       <br />
@@ -64,11 +53,9 @@ export default function CustomizedTables() {
               <StyledTableCell align="center">Name</StyledTableCell>
               <StyledTableCell align="center">Mail</StyledTableCell>
               <StyledTableCell align="center">Actions</StyledTableCell>
-              {/* <StyledTableCell align="center">Protein&nbsp;(g)</StyledTableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>
-            {/* {rows.map((row) => ( */}
             <StyledTableRow>
               <StyledTableCell component="th" scope="row">
                 <Avatar
@@ -88,7 +75,6 @@ export default function CustomizedTables() {
                   <DeleteIcon />
                 </IconButton>
               </StyledTableCell>
-              {/* <StyledTableCell align="right"></StyledTableCell> */}
             </StyledTableRow>
             <StyledTableRow>
               <StyledTableCell component="th" scope="row">
@@ -109,7 +95,6 @@ export default function CustomizedTables() {
                   <DeleteIcon />
                 </IconButton>
               </StyledTableCell>
-              {/* <StyledTableCell align="right"></StyledTableCell> */}
             </StyledTableRow>
             <StyledTableRow>
               <StyledTableCell component="th" scope="row">
@@ -130,7 +115,6 @@ export default function CustomizedTables() {
                   <DeleteIcon />
                 </IconButton>
               </StyledTableCell>
-              {/* <StyledTableCell align="right"></StyledTableCell> */}
             </StyledTableRow>
             <StyledTableRow>
               <StyledTableCell component="th" scope="row">
@@ -151,7 +135,6 @@ export default function CustomizedTables() {
                   <DeleteIcon />
                 </IconButton>
               </StyledTableCell>
-              {/* <StyledTableCell align="right"></StyledTableCell> */}
             </StyledTableRow>
             <StyledTableRow>
               <StyledTableCell component="th" scope="row">
@@ -172,9 +155,7 @@ export default function CustomizedTables() {
                   <DeleteIcon />
                 </IconButton>
               </StyledTableCell>
-              {/* <StyledTableCell align="right"></StyledTableCell> */}
             </StyledTableRow>
-            {/* ))} */}
           </TableBody>
         </Table>
       </TableContainer>

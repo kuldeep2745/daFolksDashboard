@@ -125,7 +125,7 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <List>
-        {["Quick help"].map((text, index) => (
+        {/* {["Quick help"].map((text, index) => (
           <ListItem className="sidebar-nav-style" key={text} disablePadding>
             <Link
               style={{ textDecoration: "none", color: "inherit" }}
@@ -139,7 +139,7 @@ function ResponsiveDrawer(props) {
               </ListItemButton>
             </Link>
           </ListItem>
-        ))}
+        ))} */}
       </List>
     </div>
   );

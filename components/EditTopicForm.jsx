@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  TextField,
+  Button,
+  Box,
+} from '@mui/material';
 
 export default function EditTopicForm({ id, name, contact, amount, type }) {
   const [newName, setNewName] = useState(name);
@@ -35,40 +40,57 @@ export default function EditTopicForm({ id, name, contact, amount, type }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 3,
+        maxWidth: '600px',
+        margin: '0 auto',
+        padding: 3,
+      }}
+    >
+      <TextField
         onChange={(e) => setNewName(e.target.value)}
         value={newName}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Title"
+        label="Topic Title"
+        variant="outlined"
+        fullWidth
       />
 
-      <input
+      <TextField
         onChange={(e) => setNewContact(e.target.value)}
         value={newContact}
-        className="border border-slate-500 px-8 py-2"
+        label="Contact"
+        variant="outlined"
         type="number"
-        placeholder="Topic Description"
+        fullWidth
       />
-      <input
+      <TextField
         onChange={(e) => setNewAmount(e.target.value)}
         value={newAmount}
-        className="border border-slate-500 px-8 py-2"
+        label="Amount"
+        variant="outlined"
         type="number"
-        placeholder="Topic Description"
+        fullWidth
       />
-      <input
+      <TextField
         onChange={(e) => setNewType(e.target.value)}
         value={newType}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Topic Description"
+        label="Type"
+        variant="outlined"
+        fullWidth
       />
 
-      <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit">
+      <Button
+        type="submit"
+        className="button"
+        sx={{ alignSelf: 'flex-start' }}
+      >
         Update Deal
-      </button>
-    </form>
+      </Button>
+    </Box>
   );
 }

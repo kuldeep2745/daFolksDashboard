@@ -1,81 +1,98 @@
 "use client";
-
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
 
 export default function AddTopic() {
   const [name, setName] = useState("");
-  const [contact, setContact] = useState();
-  const [amount, setAmount] = useState();
+  const [contact, setContact] = useState("");
+  const [amount, setAmount] = useState("");
   const [type, setType] = useState("");
 
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const queryType = searchParams.get("type");
+
+  useEffect(() => {
+    setType(queryType);
+  }, [queryType]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!name || !contact || !amount || !type) {
-      alert("Name, Contact and Amount are required.");
-      return;
-    }
 
     try {
       const res = await fetch("http://localhost:3000/api/topics", {
         method: "POST",
         headers: {
-          "Content-type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ name, contact, amount, type }),
       });
 
       if (res.ok) {
-        router.push("/");
+        setName("");
+        setContact("");
+        setAmount("");
+        setType("");
+        router.push(`/${type}`);
       } else {
         throw new Error("Failed to create a deal");
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
-        onChange={(e) => setName(e.target.value)}
-        value={name}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Deal Name"
-      />
-
-      <input
-        onChange={(e) => setContact(e.target.value)}
-        value={contact}
-        className="border border-slate-500 px-8 py-2"
-        type="number"
-        placeholder="Deal Contact"
-      />
-      <input
-        onChange={(e) => setAmount(e.target.value)}
-        value={amount}
-        className="border border-slate-500 px-8 py-2"
-        type="number"
-        placeholder="Deal Amount"
-      />
-      <input
-        onChange={(e) => setType(e.target.value)}
-        value={type}
-        className="border border-slate-500 px-8 py-2"
-        type="text"
-        placeholder="Deal Type"
-      />
-
-      <button
-        type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
-      >
-        Add Deal
-      </button>
+    <form onSubmit={handleSubmit}>
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={12}>
+          <Button type="submit" className="button">
+            Add {type}
+          </Button>
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+            fullWidth
+            size="small"
+            label="Deal Name"
+            variant="outlined"
+            required
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            onChange={(e) => setContact(e.target.value)}
+            value={contact}
+            fullWidth
+            size="small"
+            type="number"
+            label="Deal Contact"
+            variant="outlined"
+            required
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            onChange={(e) => setAmount(e.target.value)}
+            value={amount}
+            fullWidth
+            size="small"
+            type="number"
+            label="Deal Amount"
+            variant="outlined"
+            required
+            inputProps={{
+              maxLength: 10,
+              minLength: 10,
+            }}
+          />
+        </Grid>
+      </Grid>
     </form>
   );
 }

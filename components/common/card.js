@@ -17,7 +17,7 @@ export default function BasicCard(props) {
 
   const getTopics = async (type) => {
     try {
-      const res = await fetch(`/api/topics?type=${type}`, {
+      const res = await fetch(`http://localhost:3000/api/topics?type=${type}`, {
         cache: "no-store",
       });
 

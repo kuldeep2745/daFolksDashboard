@@ -38,7 +38,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const getTopics = async (type) => {
   try {
-    const res = await fetch(`/api/topics?type=${type}`, {
+    const res = await fetch(`http://localhost:3000/api/topics?type=${type}`, {
       cache: "no-store",
     });
 
@@ -93,7 +93,7 @@ export default function CustomizedTables(props) {
     const confirmed = confirm("Are you sure?");
 
     if (confirmed) {
-      const res = await fetch(`/api/topics?id=${id}`, {
+      const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
         method: "DELETE",
       });
 

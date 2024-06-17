@@ -119,21 +119,21 @@ export default function CustomizedTables(props) {
       <div style={{ marginBottom: "20px" }}>
         <Button
           className="button"
-          onClick={() => setTypeFilter("deal")}
+          onClick={() => setTypeFilter("deals")}
           sx={{ marginRight: "10px" }}
         >
           Deals
         </Button>
         <Button
           className="button"
-          onClick={() => setTypeFilter("lead")}
+          onClick={() => setTypeFilter("leads")}
           sx={{ marginRight: "10px" }}
         >
           Leads
         </Button>
         <Button
           className="button"
-          onClick={() => setTypeFilter("organization")}
+          onClick={() => setTypeFilter("organizations")}
         >
           Organizations
         </Button>

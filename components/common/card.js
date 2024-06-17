@@ -14,6 +14,7 @@ export default function BasicCard(props) {
   const [deals, setDeals] = React.useState("all");
   const [leads, setLeads] = React.useState("all");
   const [organizations, setOrganizations] = React.useState("all");
+  const [people, setPeople] = React.useState("all");
 
   const getTopics = async (type) => {
     try {
@@ -39,6 +40,9 @@ export default function BasicCard(props) {
       setLeads(data.topics.filter((item) => item?.type === "leads").length);
       setOrganizations(
         data.topics.filter((item) => item?.type === "organizations").length
+      );
+      setPeople(
+        data.topics.filter((item) => item?.type === "people").length
       );
     }
     fetchTopics();
@@ -75,6 +79,8 @@ export default function BasicCard(props) {
                   ? leads
                   : props?.type == "organizations"
                   ? organizations
+                  : props?.type == "people"
+                  ? people
                   : "00"
               }
             />

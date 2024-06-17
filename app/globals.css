@@ -112,6 +112,7 @@ a {
 body {
   background: url("../public//assets/background.jpg");
   background-size: cover;
+  
 }
 
 
@@ -120,7 +121,6 @@ body {
 .sidebar-background {
   background: url("../public//assets/background.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
 }
 .sidebar-nav-style {
   /* width: 100vw; */

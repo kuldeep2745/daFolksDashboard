@@ -15,7 +15,7 @@ import TablePagination from "@mui/material/TablePagination";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import EditIcon from "@mui/icons-material/Edit";
-import RemoveDeals from "./RemoveBtn";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -58,14 +58,16 @@ export default function CustomizedTables(props) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [isClient, setIsClient] = React.useState(false);
+  const [refresh, setRefresh] = React.useState(false);
+
+  const fetchTopics = async () => {
+    const data = await getTopics(props?.apiType);
+    setTopics(data.topics || []);
+  };
 
   React.useEffect(() => {
-    async function fetchTopics() {
-      const data = await getTopics(props?.apiType);
-      setTopics(data.topics || []);
-    }
     fetchTopics();
-  }, [props?.apiType]);
+  }, [props?.apiType, refresh]);
 
   React.useEffect(() => {
     setIsClient(true);
@@ -84,6 +86,20 @@ export default function CustomizedTables(props) {
     if (isClient) {
       const query = new URLSearchParams({ type: props?.apiType }).toString();
       router.push(`/addTopic?${query}`);
+    }
+  };
+
+  const removeTopic = async (id) => {
+    const confirmed = confirm("Are you sure?");
+
+    if (confirmed) {
+      const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
+        method: "DELETE",
+      });
+
+      if (res.ok) {
+        setRefresh(!refresh);
+      }
     }
   };
 
@@ -124,7 +140,9 @@ export default function CustomizedTables(props) {
                         <EditIcon />
                       </IconButton>
                     </Link>
-                    <RemoveDeals id={item._id} />
+                    <IconButton onClick={() => removeTopic(item._id)} aria-label="delete">
+                      <DeleteIcon />
+                    </IconButton>
                   </StyledTableCell>
                 </StyledTableRow>
               ))}

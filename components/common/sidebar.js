@@ -85,7 +85,7 @@ function ResponsiveDrawer(props) {
       </Link>
       {/* <Toolbar /> */}
       <Divider />
-      <List className="sidebar-nav-style">
+      <List className="">
         {Object.entries(routes).map(([text, route]) => (
           <div className="sidebar-nav-style">
             <ListItem key={text} disablePadding>

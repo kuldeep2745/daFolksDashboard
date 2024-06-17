@@ -20,7 +20,7 @@ export default function AddTopic(props) {
     e.preventDefault();
 
     try {
-      const res = await fetch("api/topics", {
+      const res = await fetch("/api/topics", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Button from "@mui/material/Button";
@@ -16,14 +17,16 @@ export default function AddTopic() {
   const queryType = searchParams.get("type");
 
   useEffect(() => {
-    setType(queryType);
+    if (queryType) {
+      setType(queryType);
+    }
   }, [queryType]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("api/topics", {
+      const res = await fetch("/api/topics", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

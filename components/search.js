@@ -15,7 +15,7 @@ import Link from "next/link";
 
 const getTopics = async (type) => {
   try {
-    const res = await fetch(`api/topics?type=${type}`, {
+    const res = await fetch(`/api/topics?type=${type}`, {
       cache: "no-store",
     });
 
